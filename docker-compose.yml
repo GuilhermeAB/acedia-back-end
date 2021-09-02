@@ -31,10 +31,10 @@ services:
     entrypoint: [ "/scripts/mongo-setup.sh" ]
 
   #######################################
-  # Auth: API
+  # Acedia: API
   #######################################
-  auth:
-    container_name: auth
+  acedia:
+    container_name: acedia
     restart: always
     build:
       context: .
@@ -43,7 +43,7 @@ services:
       - acedia-net
     command: yarn serve
     volumes:
-      - .:/auth
+      - .:/acedia
     env_file:
       - .env.staging
     ports:

@@ -43,7 +43,13 @@ async function method (request: Request, response: Response, session?: ClientSes
   const personResult = await Person.add(person, session);
 
   return response.status(201).json({
-    person: personResult
+    person: personResult,
+    messages: {
+      information: {
+        code: 'PERSON_ADDED',
+        message: 'Person added successfully'
+      }
+    }
   });
 }
 

@@ -59,7 +59,8 @@ app.use(helmet());
 app.use(express.json());
 app.use(cors({
   origin: [
-    `http://localhost:${PORT}`
+    `http://localhost:${PORT}`,
+    'http://localhost:8000'
   ],
   allowedHeaders: [
     'Content-Type',
